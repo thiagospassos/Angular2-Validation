@@ -6,13 +6,14 @@ using System.Threading.Tasks;
 
 namespace Angular2_Validation.Models
 {
-public class Person
-{
-    [Required]
-    public string FirstName { get; set; }
-    public string LastName { get; set; }
-    public string Nickname { get; set; }
-    [Required]
-    public string Email { get; set; }
-}
+    public class Person
+    {
+        [Required]
+        public string FirstName { get; set; }
+        public string LastName { get; set; }
+        public string Nickname { get; set; }
+        [Required]
+        [EmailAddress]
+        public string Email { get; set; }
+    }
 }
