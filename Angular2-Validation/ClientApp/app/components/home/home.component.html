@@ -1,16 +1,34 @@
-<h1>Hello, world!</h1>
-<p>Welcome to your new single-page application, built with:</p>
-<ul>
-    <li><a href='https://get.asp.net/'>ASP.NET Core</a> and <a href='https://msdn.microsoft.com/en-us/library/67ef8sbd.aspx'>C#</a> for cross-platform server-side code</li>
-    <li><a href='https://angular.io/'>Angular 2</a> and <a href='http://www.typescriptlang.org/'>TypeScript</a> for client-side code</li>
-    <li><a href='https://webpack.github.io/'>Webpack</a> for building and bundling client-side resources</li>
-    <li><a href='http://getbootstrap.com/'>Bootstrap</a> for layout and styling</li>
-</ul>
-<p>To help you get started, we've also set up:</p>
-<ul>
-    <li><strong>Client-side navigation</strong>. For example, click <em>Counter</em> then <em>Back</em> to return here.</li>
-    <li><strong>Server-side prerendering</strong>. For faster initial loading and improved SEO, your Angular 2 app is prerendered on the server. The resulting HTML is then transferred to the browser where a client-side copy of the app takes over.</li>
-    <li><strong>Webpack dev middleware</strong>. In development mode, there's no need to run the <code>webpack</code> build tool. Your client-side resources are dynamically built on demand. Updates are available as soon as you modify any file.</li>
-    <li><strong>Hot module replacement</strong>. In development mode, you don't even need to reload the page after making most changes. Within seconds of saving changes to files, your Angular 2 app will be rebuilt and a new instance injected is into the page.</li>
-    <li><strong>Efficient production builds</strong>. In production mode, development-time features are disabled, and the <code>webpack</code> build tool produces minified static CSS and JavaScript files.</li>
-</ul>
+<h1>Person Validation</h1>
+
+<form>
+    <div class="row">
+        <div class="col-xs-12">
+            <div class="form-group">
+                <label for="basicInputActive">First Name</label>
+                <input type="text" [(ngModel)]="model.firstName" handleValidation required name="FirstName" class="form-control" id="basicInputActive" placeholder="First Name">
+            </div>
+        </div>
+        <div class="col-xs-12">
+            <div class="form-group">
+                <label for="basicInput">Last Name</label>
+                <input type="text" [(ngModel)]="model.lasName" handleValidation required name="LastName" class="form-control" id="basicInputActive" placeholder="Last Name">
+            </div>
+        </div>
+        <div class="col-xs-12">
+            <div class="form-group">
+                <label for="basicInput">Nickname</label>
+                <input type="text" [(ngModel)]="model.nickname" handleValidation required name="Nickname" class="form-control" id="basicInputActive" placeholder="Nickname">
+            </div>
+        </div>
+        <div class="col-xs-12">
+            <div class="form-group">
+                <label for="basicInput">Email</label>
+                <input type="text" [(ngModel)]="model.email" handleValidation required name="Email" class="form-control" id="basicInputActive" placeholder="Email">
+            </div>
+        </div>
+    </div>
+    <button type="submit" class="btn btn-primary" (click)="update()" >Save</button>
+</form>
+<div class="form-group has-error" handleValidation>
+    <p class="help-block text-center"></p>
+</div>

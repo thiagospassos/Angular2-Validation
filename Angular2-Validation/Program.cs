@@ -16,6 +16,7 @@ namespace Angular2_Validation
                 .AddCommandLine(args)
                 .AddEnvironmentVariables(prefix: "ASPNETCORE_")
                 .Build();
+            
 
             var host = new WebHostBuilder()
                 .UseConfiguration(config)
